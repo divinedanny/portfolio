@@ -22,7 +22,7 @@
       .btn-line{
         //line 1 - rotate
         &:nth-child(1){
-          background: gold;
+          background: $secondary-color;
           transform: rotate(45deg) translate(5px,5px) 
         }
 
@@ -34,7 +34,7 @@
 
         // line 3 - rotate
         &:nth-child(3){
-          background: red;
+          background: white;
           transform: rotate(-45deg) translate(6px,-6px)
         }
 
@@ -86,15 +86,53 @@
     @include easeOut;
 
     &.show{
-      transform:translate3d(0, 0, 0)
+      transform:translate3d(0, 0, 0);
     }
-    .protrait{
-      width: 250px;
-      height: 250px;
-      background: url('../dist/img/portrait.jpg');
+    .portrait{
+      width: 425px;
+      height: 600px;
+      background: url('../img/victor baron.jpg');
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
   }
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
 
+    &.show {
+      //Slide in from right
+      transform:translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+      .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover{
+          color: $secondary-color;
+          @include easeOut;
+        }
+
+      
+    }
+    
+}
+
+//Delay each nav items by 0.2s
+@for $x from 1 through 4{
+  .nav-item:nth-child(#{$x}){
+    transition-delay: $x * 0.15s;
+  }
 }
