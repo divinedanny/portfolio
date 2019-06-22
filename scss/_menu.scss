@@ -11,8 +11,12 @@
       width: 28px;
       height: 3px;
       margin: 0 0 5px 0;
-      background: #fff;
+      background: set-text-color($primary-color);
       @include easeOut;
+
+      &:hover{
+      background: $secondary-color;
+      }
     }
 
     //Line rotate to X with menu lines
@@ -34,7 +38,7 @@
 
         // line 3 - rotate
         &:nth-child(3){
-          background: white;
+          background: set-text-color($primary-color);
           transform: rotate(-45deg) translate(6px,-6px)
         }
 
@@ -90,7 +94,7 @@
     }
     .portrait{
       
-      background: url('../img/pics.jpg');
+      background: url('../img/wall_28.jpg');
       width: 425px;
       height: 550px;
       border-radius: 50%;
@@ -117,7 +121,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 500;
-        color: #fff;
+        color: set-text-color($primary-color);
         text-decoration: none;
         @include easeOut;
 
